@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Contacts } from "./pages/Contacts";
 import Home from "./pages/Home";
 import { Header } from "./components/Header";
+import { Catalog } from "./pages/Catalog";
+import { Cart } from "./pages/Cart";
+import { SignUp } from "./pages/SignUp";
 
 function App() {
   return (
@@ -9,8 +12,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path="/" element={Home} />
-          <Route path="/about" element={} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/signUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </>

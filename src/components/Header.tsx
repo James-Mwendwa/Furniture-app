@@ -8,7 +8,7 @@ import { TbSofa } from "react-icons/tb";
 export const Header = () => {
   return (
     <div
-      className="sticky flex items-center justify-between flex-wrap mx-10 p-5 border-y-2 border-l-gray-400
+      className=" flex items-center justify-between top-0  mx-10 p-5 
     "
     >
       <Link to="/">

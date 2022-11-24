@@ -1,0 +1,32 @@
+export const Banner = () => {
+  return (
+    <>
+      <div className="relative flex box-border  h-screen">
+        <div className="grid place-content-center bg-green w-2/4">
+          <h2 className=" text-6xl font-bold">
+            Your Imagination, <br></br> Our Creation
+          </h2>
+        </div>
+        <div className="bg-blue w-2/4">
+          <img className="object-contain" src="images/img25.jpg" alt="" />
+        </div>
+      </div>
+
+      <div className="absolute flex items-center justify-center">
+        <div className="bg-card5 h-48 w-64 "></div>
+
+        <div className="flex h-48 w-64 items-center justify-between bg-black">
+          <p className="text-white ml-2 ">
+            Guarantee<br></br>10 years
+          </p>
+          <p className="text-white">
+            Individual<br></br>Order
+          </p>
+          <p className="text-white mr-2">
+            Free<br></br>Delivery
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};

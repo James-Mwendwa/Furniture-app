@@ -8,6 +8,7 @@ module.exports = {
         black: "rgba(0, 0, 0)",
         white: " rgba(255, 255, 255)",
         green: "rgba(236, 253, 245,1)",
+        bg: "#F3F3F3",
         card1: "#EAE9E7",
         card2: "#FAF3E9",
         card3: "#EBF0F3",

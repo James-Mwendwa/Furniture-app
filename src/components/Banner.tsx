@@ -12,10 +12,10 @@ export const Banner = () => {
         </div>
 
         <div className="absolute flex items-center bottom-0 inset-x-1/4">
-          <div className="bg-red-700 h-48 w-64">
+          <div className="bg-card4 h-48 w-64">
             <img
-              className="object-contain h-48 w-48 mx-4"
-              src="images/img14.jpg"
+              className="object-contain h-48 w-48 mx-8 mix-blend-multiply"
+              src="images/img3.jpg"
               alt=""
             />
           </div>

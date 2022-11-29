@@ -32,7 +32,7 @@ export const Cards = () => {
       </div>
 
       <div className="h-80 bg-blue mx-6 p-5">
-        <div className="flex flex-col m-10">
+        <div className="flex flex-col mt-10 mx-10">
           <h2 className="text-2xl">
             Choose The Modern<br></br>Furniture For Better Living
           </h2>

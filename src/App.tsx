@@ -1,11 +1,13 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Contacts } from "./pages/Contacts";
 import Home from "./pages/Home";
-import { Header } from "./components/Header";
-import { Catalog } from "./pages/Catalog";
-import { Cart } from "./pages/Cart";
-import { SignUp } from "./pages/SignUp";
 import { Footer } from "./components/Footer";
+import { Header } from "./components/Header";
+
+const LazyContacts = React.lazy(() => import("./pages/Contacts"));
+const LazyCatalog = React.lazy(() => import("./pages/Catalog"));
+const LazyCart = React.lazy(() => import("./pages/Cart"));
+const LazySignUp = React.lazy(() => import("./pages/SignUp"));
 
 function App() {
   return (
@@ -14,10 +16,38 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/signUp" element={<SignUp />} />
+          <Route
+            path="/catalog"
+            element={
+              <React.Suspense fallback="Loading...">
+                <LazyCatalog />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <React.Suspense fallback="Loading...">
+                <LazyContacts />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <React.Suspense fallback="Loading...">
+                <LazyCart />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/signUp"
+            element={
+              <React.Suspense fallback="Loading...">
+                <LazySignUp />
+              </React.Suspense>
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

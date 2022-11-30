@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { Link } from "react-router-dom";
 
 export const Cards = () => {
@@ -5,27 +7,35 @@ export const Cards = () => {
     <div className="h-screen">
       <div className="flex items-center justify-between  mx-1 p-5 ">
         <div className="bg-card1  h-60 w-96 grid place-content-center">
-          <img className=" mix-blend-multiply" src="images/wood.jpg" alt="" />
+          <LazyLoadImage
+            className=" mix-blend-multiply"
+            src="images/wood.jpg"
+            effect="blur"
+            alt=""
+          />
         </div>
         <div className="bg-card2 mx-2  h-60 w-96 grid place-content-center">
-          <img
+          <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/stool.jpg"
+            effect="blur"
             alt=""
           />
         </div>
         <div className="bg-card1 h-60 w-96 grid place-content-center">
-          <img
+          <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/pine.jpg"
+            effect="blur"
             alt=""
           />
         </div>
 
         <div className="bg-card3 ml-2  h-60 w-96 grid place-content-center">
-          <img
+          <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/cloth.jpg"
+            effect="blur"
             alt=""
           />
         </div>

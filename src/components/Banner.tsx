@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 export const Banner = () => {
   return (
     <>
@@ -8,14 +11,20 @@ export const Banner = () => {
           </h2>
         </div>
         <div className="bg-blue w-2/4">
-          <img className="object-contain" src="images/img25.jpg" alt="" />
+          <LazyLoadImage
+            className="object-contain"
+            src="images/img25.jpg"
+            effect="blur"
+            alt=""
+          />
         </div>
 
         <div className="absolute flex items-center bottom-0 inset-x-1/4">
           <div className="bg-card4 h-48 w-64">
-            <img
+            <LazyLoadImage
               className="object-contain h-48 w-48 mx-8 mix-blend-multiply"
               src="images/img3.jpg"
+              effect="blur"
               alt=""
             />
           </div>

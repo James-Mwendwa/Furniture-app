@@ -10,7 +10,6 @@ export const Cards = () => {
           <LazyLoadImage
             className=" mix-blend-multiply"
             src="images/wood.jpg"
-            effect="blur"
             alt=""
           />
         </div>
@@ -18,7 +17,6 @@ export const Cards = () => {
           <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/stool.jpg"
-            effect="blur"
             alt=""
           />
         </div>
@@ -26,7 +24,6 @@ export const Cards = () => {
           <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/pine.jpg"
-            effect="blur"
             alt=""
           />
         </div>
@@ -35,7 +32,6 @@ export const Cards = () => {
           <LazyLoadImage
             className="h-60 w-60 mix-blend-multiply"
             src="images/cloth.jpg"
-            effect="blur"
             alt=""
           />
         </div>

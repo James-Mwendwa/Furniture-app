@@ -24,7 +24,6 @@ export const Banner = () => {
             <LazyLoadImage
               className="object-contain h-48 w-48 mx-8 mix-blend-multiply"
               src="images/img3.jpg"
-              effect="blur"
               alt=""
             />
           </div>

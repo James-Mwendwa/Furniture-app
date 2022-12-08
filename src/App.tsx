@@ -9,7 +9,7 @@ const LazyCatalog = React.lazy(() => import("./pages/Catalog"));
 const LazyCart = React.lazy(() => import("./pages/Cart"));
 const LazySignUp = React.lazy(() => import("./pages/SignUp"));
 
-function App() {
+function App({ addProducts }: any) {
   return (
     <>
       <BrowserRouter>

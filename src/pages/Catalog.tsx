@@ -25,9 +25,14 @@ const Catalog = () => {
                   src={item.img}
                   alt={item.img}
                 />
-                <h2>{item.title}</h2>
+                <h2>{item.desc}</h2>
                 <p>${item.price}</p>
-                <button>ADD TO CART</button>
+                <button
+                  onClick={() => console.log("item added")}
+                  className="bg-yellow-500 mt-3 text-white"
+                >
+                  ADD TO CART
+                </button>
               </div>
             );
           })}
@@ -49,7 +54,7 @@ const Catalog = () => {
                   alt={item.img}
                   effect="blur"
                 />
-                <h2>{item.title}</h2>
+                <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button>ADD TO CART</button>
               </div>
@@ -73,7 +78,7 @@ const Catalog = () => {
                   alt={item.img}
                   effect="blur"
                 />
-                <h2>{item.title}</h2>
+                <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button>ADD TO CART</button>
               </div>
@@ -96,7 +101,7 @@ const Catalog = () => {
                   src={item.img}
                   alt={item.img}
                 />
-                <h2>{item.title}</h2>
+                <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button>ADD TO CART</button>
               </div>

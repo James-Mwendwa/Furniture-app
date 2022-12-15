@@ -1,11 +1,11 @@
-import { diningItems } from "../lib/data";
-import { officeItems } from "../lib/data";
-import { sofaItems } from "../lib/data";
-import { bedroomItems } from "../lib/data";
-
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+
+const url1 = "http://localhost:8000/dining";
+const url2 = "http://localhost:8000/office";
+const url3 = "http://localhost:8000/sofa";
+const url4 = "http://localhost:8000/bedroom";
 
 const Catalog = () => {
   return (

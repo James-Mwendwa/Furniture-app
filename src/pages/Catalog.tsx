@@ -8,29 +8,37 @@ const url2 = "http://localhost:8000/office";
 const url3 = "http://localhost:8000/sofa";
 const url4 = "http://localhost:8000/bedroom";
 
-type DinningProps = {
+type DataProps = {
   id: number;
   desc: string;
   price: string;
   img: string;
 };
 
-const Catalog = () => {
-  const [dining, setDining] = useState([]);
-
-  async function fetchDining() {
-    const results = await Promise.all([
-      fetch(url1).then((res) => res.json()),
-      fetch(url2).then((res) => res.json()),
-      fetch(url3).then((res) => res.json()),
-      fetch(url4).then((res) => res.json()),
-    ]);
-
-    console.log(results);
-  }
+const Catalog: React.FC = () => {
+  const [data, setData] = useState<[DataProps | null]>([null]);
 
   useEffect(() => {
-    fetchDining();
+    const fetchData = async () => {
+      const promises = [
+        fetch(" http://localhost:8000/dining").then((response) =>
+          response.json()
+        ),
+        fetch(" http://localhost:8000/office").then((response) =>
+          response.json()
+        ),
+        fetch(" http://localhost:8000/sofa").then((response) =>
+          response.json()
+        ),
+        fetch(" http://localhost:8000/bedroom").then((response) =>
+          response.json()
+        ),
+      ];
+
+      const [officeData] = await Promise.all(promises);
+      setData(officeData);
+    };
+    fetchData();
   }, []);
 
   return (
@@ -42,7 +50,8 @@ const Catalog = () => {
         </div>
 
         <div className="grid grid-cols-4 gap-3 cursor-pointer">
-          <LazyLoadImage
+          {JSON.stringify(data[0])}
+          {/* <LazyLoadImage
             className="h-64 w-72 mt-4 rounded-lg"
             src={dining.img}
             alt={dining.img}
@@ -54,7 +63,7 @@ const Catalog = () => {
             className="bg-yellow-500 mt-3 text-white"
           >
             ADD TO CART
-          </button>
+          </button> */}
         </div>
       </div>
 

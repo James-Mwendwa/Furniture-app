@@ -3,11 +3,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
-const url1 = "http://localhost:8000/dining";
-const url2 = "http://localhost:8000/office";
-const url3 = "http://localhost:8000/sofa";
-const url4 = "http://localhost:8000/bedroom";
-
 type DataProps = {
   id: number;
   desc: string;
@@ -35,11 +30,13 @@ const Catalog: React.FC = () => {
         ),
       ];
 
-      const [officeData] = await Promise.all(promises);
-      setData(officeData);
+      const [officeData, diningData, sofaData, bedroomData] = await Promise.all(
+        promises
+      );
+      setData(data);
     };
     fetchData();
-  }, []);
+  }, [data]);
 
   return (
     <div className="bg-bg">

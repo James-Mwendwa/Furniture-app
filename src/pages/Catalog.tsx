@@ -11,7 +11,7 @@ type DataProps = {
 };
 
 const Catalog: React.FC = () => {
-  const [data, setData] = useState<[DataProps | null]>([null]);
+  const [data, setData] = useState<Array<DataProps[]>>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,10 +30,10 @@ const Catalog: React.FC = () => {
         ),
       ];
 
-      const [officeData, diningData, sofaData, bedroomData] = await Promise.all(
+      const officeData = await Promise.all(
         promises
       );
-      setData(data);
+      setData(officeData);
     };
     fetchData();
   }, [data]);
@@ -46,18 +46,18 @@ const Catalog: React.FC = () => {
           <BsFillArrowRightCircleFill className="text-2xl cursor-pointer" />
         </div>
         { data[0] &&
-        <div className="grid grid-cols-4 gap-3 cursor-pointer">
+        data[0].map( item => <div className="grid grid-cols-4 gap-3 cursor-pointer">
             <LazyLoadImage
-             src={data[0]['img']}
+             src={item.img}
              />
-            <h2>{data[0].desc}</h2>
-            <p>${data[0].price}</p>
+            <h2>{item.desc}</h2>
+            <p>${item.price}</p>
             <button
                 onClick={() => console.log("item added")}
                 className="bg-yellow-500 mt-3 text-white"
             >ADD TO CART</button> 
         </div>
-        }
+        )}
       </div>
 
       <div className="p-5 mx-10">

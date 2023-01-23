@@ -11,7 +11,7 @@ type DataProps = {
 };
 
 const Catalog: React.FC = () => {
-  const [data, setData] = useState<[DataProps | null]>([null]);
+  const [data, setData] = useState<DataProps[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,8 +33,10 @@ const Catalog: React.FC = () => {
       const [officeData, diningData, sofaData, bedroomData] = await Promise.all(
         promises
       );
+      console.log(officeData);
       setData(data);
     };
+
     fetchData();
   }, [data]);
 
@@ -45,19 +47,20 @@ const Catalog: React.FC = () => {
           <h2 className="text-xl">Dinning</h2>
           <BsFillArrowRightCircleFill className="text-2xl cursor-pointer" />
         </div>
-        { data[0] &&
-        <div className="grid grid-cols-4 gap-3 cursor-pointer">
-            <LazyLoadImage
-             src={data[0]['img']}
-             />
-            <h2>{data[0].desc}</h2>
-            <p>${data[0].price}</p>
+
+        {data[2] && (
+          <div className="grid grid-cols-4 gap-3 cursor-pointer">
+            <LazyLoadImage src={data[1]["img"]} />
+            <h2>{data[1].desc}</h2>
+            <p>${data[1].price}</p>
             <button
-                onClick={() => console.log("item added")}
-                className="bg-yellow-500 mt-3 text-white"
-            >ADD TO CART</button> 
-        </div>
-        }
+              onClick={() => console.log("item added")}
+              className="bg-yellow-500 mt-3 text-white"
+            >
+              ADD TO CART
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="p-5 mx-10">

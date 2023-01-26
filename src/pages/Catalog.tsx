@@ -57,7 +57,7 @@ const Catalog: React.FC = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert("item added")}
+                  onClick={() => alert(`item added ${item.id}`)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -85,7 +85,7 @@ const Catalog: React.FC = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert("item added")}
+                  onClick={() => alert(`item added ${item.id}`)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -112,7 +112,7 @@ const Catalog: React.FC = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert("item added")}
+                  onClick={() => alert(`item added ${item.id}`)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -139,7 +139,7 @@ const Catalog: React.FC = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert("item added")}
+                  onClick={() => alert(`item added ${item.id}`)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART

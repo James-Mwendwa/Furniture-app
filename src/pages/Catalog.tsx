@@ -30,8 +30,8 @@ const Catalog: React.FC = () => {
         ),
       ];
 
-      const officeData = await Promise.all(promises);
-      setData(officeData);
+      const furnitureData = await Promise.all(promises);
+      setData(furnitureData);
     };
 
     fetchData();

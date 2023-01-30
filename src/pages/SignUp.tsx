@@ -9,7 +9,7 @@ const SignUp = () => {
 
         <div className="flex">
           <label htmlFor="name">Email</label>
-          <input type="text" />
+          <input type="text" placeholder="email" />
         </div>
 
         <div className="flex">

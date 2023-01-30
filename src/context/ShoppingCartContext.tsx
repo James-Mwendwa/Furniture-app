@@ -16,5 +16,10 @@ export const ShoppingCartProvider = ({
   children,
 }: ShoppingCartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  return { children };
+
+  return (
+    <ShoppingCartContext.Provider value={{ cartItems: 1 }}>
+      {children}
+    </ShoppingCartContext.Provider>
+  );
 };

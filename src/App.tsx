@@ -3,15 +3,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 const LazyContacts = React.lazy(() => import("./pages/Contacts"));
 const LazyCatalog = React.lazy(() => import("./pages/Catalog"));
 const LazyCart = React.lazy(() => import("./pages/Cart"));
 const LazySignUp = React.lazy(() => import("./pages/SignUp"));
 
-function App({ addProducts }: any) {
+function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -51,7 +52,7 @@ function App({ addProducts }: any) {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </ShoppingCartProvider>
   );
 }
 

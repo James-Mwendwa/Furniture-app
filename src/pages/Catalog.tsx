@@ -3,6 +3,9 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
+import { useContext } from "react";
+import { ShoppingCartContext } from "../context/ShoppingCartContext";
+
 type DataProps = {
   id: number;
   desc: string;
@@ -10,9 +13,14 @@ type DataProps = {
   img: string;
 };
 
-const Catalog: React.FC = () => {
+type ItemProps = {
+  id: number;
+};
+
+const Catalog = ({ id }: ItemProps) => {
   const [data, setData] = useState<Array<DataProps[]>>([]);
 
+  const { increaseCartQuantity } = useContext(ShoppingCartContext);
   useEffect(() => {
     const fetchData = async () => {
       const promises = [
@@ -57,7 +65,7 @@ const Catalog: React.FC = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert(`item added ${item.id}`)}
+                  onClick={() => increaseCartQuantity(id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART

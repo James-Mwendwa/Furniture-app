@@ -13,6 +13,7 @@ type ShoppingCartContext = {
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
   getItemQuantity: (id: number) => number;
+  cartItems: CartItem[];
 };
 export const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
@@ -74,6 +75,7 @@ export const ShoppingCartProvider = ({
         decreaseCartQuantity,
         removeFromCart,
         getItemQuantity,
+        cartItems,
       }}
     >
       {children}

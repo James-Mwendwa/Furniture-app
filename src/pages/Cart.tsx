@@ -1,16 +1,11 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
+import { FurnitureData } from "../pages/Catalog";
 
 const Cart = () => {
-  const { increaseCartQuantity } = useContext(ShoppingCartContext);
-  console.log(increaseCartQuantity);
-  return (
-    <div>
-      <p>img</p>
-      <p>title</p>
-      <p>price</p>
-    </div>
-  );
+  const { increaseCartQuantity, cartItems } = useContext(ShoppingCartContext);
+  console.log(FurnitureData);
+  return <h2>cart items</h2>;
 };
 
 export default Cart;

@@ -17,10 +17,15 @@ type ItemProps = {
   id: number;
 };
 
-const Catalog = ({ id }: ItemProps) => {
+export const FurnitureData = {
+  getData: any,
+};
+
+const Catalog = () => {
   const [data, setData] = useState<Array<DataProps[]>>([]);
 
   const { increaseCartQuantity } = useContext(ShoppingCartContext);
+
   useEffect(() => {
     const fetchData = async () => {
       const promises = [
@@ -39,11 +44,14 @@ const Catalog = ({ id }: ItemProps) => {
       ];
 
       const furnitureData = await Promise.all(promises);
+
       setData(furnitureData);
     };
 
     fetchData();
   }, [data]);
+
+  FurnitureData.getData = () => data;
 
   return (
     <div className="bg-bg">
@@ -93,7 +101,7 @@ const Catalog = ({ id }: ItemProps) => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert(`item added ${item.id}`)}
+                  onClick={() => increaseCartQuantity(id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -120,7 +128,7 @@ const Catalog = ({ id }: ItemProps) => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert(`item added ${item.id}`)}
+                  onClick={() => increaseCartQuantity(id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -147,7 +155,7 @@ const Catalog = ({ id }: ItemProps) => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => alert(`item added ${item.id}`)}
+                  onClick={() => increaseCartQuantity(id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART

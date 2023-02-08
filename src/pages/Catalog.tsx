@@ -13,12 +13,8 @@ type DataProps = {
   img: string;
 };
 
-type ItemProps = {
-  id: number;
-};
-
 export const FurnitureData = {
-  getData: any,
+  getData: {},
 };
 
 const Catalog = () => {
@@ -73,7 +69,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => increaseCartQuantity(item.id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -101,7 +97,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => increaseCartQuantity(item.id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -128,7 +124,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => increaseCartQuantity(item.id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -155,7 +151,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(id)}
+                  onClick={() => increaseCartQuantity(item.id)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART

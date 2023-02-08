@@ -4,8 +4,15 @@ import { FurnitureData } from "../pages/Catalog";
 
 const Cart = () => {
   const { increaseCartQuantity, cartItems } = useContext(ShoppingCartContext);
-  console.log(FurnitureData);
-  return <h2>cart items</h2>;
+
+  const furnitureData = Object.values(FurnitureData);
+  console.log(furnitureData);
+
+  return (
+    <div>
+      <h2>Items</h2>
+    </div>
+  );
 };
 
 export default Cart;

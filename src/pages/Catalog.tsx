@@ -69,7 +69,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(item.id)}
+                  onClick={() => increaseCartQuantity(item.id, item)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -97,7 +97,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(item.id)}
+                  onClick={() => increaseCartQuantity(item.id, item)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -124,7 +124,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(item.id)}
+                  onClick={() => increaseCartQuantity(item.id, item)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART
@@ -151,7 +151,7 @@ const Catalog = () => {
                 <h2>{item.desc}</h2>
                 <p>${item.price}</p>
                 <button
-                  onClick={() => increaseCartQuantity(item.id)}
+                  onClick={() => increaseCartQuantity(item.id, item)}
                   className="bg-yellow-500 p-1 text-sm rounded-md mt-3 text-white"
                 >
                   ADD TO CART

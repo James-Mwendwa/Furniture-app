@@ -1,17 +1,28 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
-import { FurnitureData } from "../pages/Catalog";
 
 const Cart = () => {
-  const { increaseCartQuantity, cartItems } = useContext(ShoppingCartContext);
-
-  const furnitureData = Object.values(FurnitureData);
-  console.log(furnitureData);
+  const {
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+    cartItems,
+  } = useContext(ShoppingCartContext);
 
   return (
-    <div>
-      <h2>Items</h2>
-    </div>
+    <>
+      {cartItems.map((item) => {
+        return (
+          <>
+            <div key={item.id}>
+              <img src={item.img} alt="" />
+              <h2>{item.price}</h2>
+              <h2>{item.desc}</h2>
+            </div>
+          </>
+        );
+      })}
+    </>
   );
 };
 

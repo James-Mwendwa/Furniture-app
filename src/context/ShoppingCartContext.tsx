@@ -3,13 +3,17 @@ import { createContext, useContext, ReactNode, useState } from "react";
 type ShoppingCartProviderProps = {
   children: ReactNode;
 };
+
 type CartItem = {
   id: number;
   quantity: number;
+  img: string;
+  desc: string;
+  price: number;
 };
 
 type ShoppingCartContext = {
-  increaseCartQuantity: (id: number) => void;
+  increaseCartQuantity: (id: number, item: any) => void;
   decreaseCartQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
   getItemQuantity: (id: number) => number;
@@ -30,14 +34,29 @@ export const ShoppingCartProvider = ({
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
-  function increaseCartQuantity(id: number) {
+  function increaseCartQuantity(id: number, item: any) {
     setCartItems((currentItem) => {
       if (currentItem.find((item) => item.id === id) == null) {
-        return [...currentItem, { id, quantity: 1 }];
+        return [
+          ...currentItem,
+          {
+            id,
+            price: item.price,
+            img: item.img,
+            desc: item.desc,
+            quantity: 1,
+          },
+        ];
       } else {
         return currentItem.map((item) => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
+            return {
+              ...item,
+              price: item.price,
+              img: item.price,
+              desc: item.desc,
+              quantity: item.quantity + 1,
+            };
           } else {
             return item;
           }

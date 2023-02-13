@@ -1,5 +1,5 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+//import { img } from "react-lazy-load-image-component";
+//import "react-lazy-load-image-component/src/effects/blur.css";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
@@ -61,7 +61,7 @@ const Catalog = () => {
           {data[0] &&
             data[0].map((item) => (
               <div key={item.id} className="m-4">
-                <LazyLoadImage
+                <img
                   className="w-80 h-40 rounded-xl mb-2"
                   src={item.img}
                   alt=""
@@ -89,7 +89,7 @@ const Catalog = () => {
           {data[0] &&
             data[1].map((item) => (
               <div className="m-4" key={item.id}>
-                <LazyLoadImage
+                <img
                   className="w-80 h-40 rounded-xl mb-2"
                   src={item.img}
                   alt=""
@@ -116,7 +116,7 @@ const Catalog = () => {
           {data[0] &&
             data[2].map((item) => (
               <div className="m-4" key={item.id}>
-                <LazyLoadImage
+                <img
                   className="w-80 h-40 rounded-xl mb-2"
                   src={item.img}
                   alt=""
@@ -143,7 +143,7 @@ const Catalog = () => {
           {data[0] &&
             data[3].map((item) => (
               <div className="m-4" key={item.id}>
-                <LazyLoadImage
+                <img
                   className="w-80 h-40 rounded-xl mb-2"
                   src={item.img}
                   alt=""

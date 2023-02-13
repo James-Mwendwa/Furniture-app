@@ -16,24 +16,32 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <CheckoutCard />
       ) : (
-        <div className="bg-bg p-5">
+        <div className="bg-bg p-3 w-3/4">
           {cartItems.map((item) => (
-            <div className="m-4 bg-white" key={item.id}>
-              <img
-                className="w-60 h-30 rounded-xl mb-2"
-                src={item.img}
-                alt=""
-              />
-              <h2>{item.price}</h2>
-              <h2>{item.desc}</h2>
+            <div className="m-2 bg-white" key={item.id}>
+              <img className="w-48 h-30 rounded-xl m-3" src={item.img} alt="" />
+              <h2 className="mx-3 text-sm">{item.desc}</h2>
+              <h2 className="mx-3 my-1">${item.price}</h2>
+
               <div className="flex items-center justify-between">
-                <button onClick={() => removeFromCart(item.id)}>REMOVE</button>
-                <div className="flex">
-                  <button onClick={() => increaseCartQuantity(item.id, item)}>
+                <button
+                  className="bg-BGyellow text-white mx-3 mb-4 p-2 text-xs rounded-md font-medium align-center"
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  REMOVE
+                </button>
+                <div className="flex align-center">
+                  <button
+                    className="bg-BGyellow text-white mx-3 mb-4 p-2 text-sm rounded-md font-medium align-center"
+                    onClick={() => decreaseCartQuantity(item.id)}
+                  >
                     -
                   </button>
-
-                  <button onClick={() => decreaseCartQuantity(item.id)}>
+                  <p>{getItemQuantity(item.id)}</p>
+                  <button
+                    className="bg-BGyellow text-white mx-3 mb-4 p-2 text-sm rounded-md font-medium align-center"
+                    onClick={() => increaseCartQuantity(item.id, item)}
+                  >
                     +
                   </button>
                 </div>

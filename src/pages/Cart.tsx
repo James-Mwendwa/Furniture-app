@@ -11,6 +11,16 @@ const Cart = () => {
     cartItems,
   } = useContext(ShoppingCartContext);
 
+  type CartItemsType = {
+    items: cartItems[];
+  };
+
+  const quantity = getItemQuantity(id);
+
+  const total = (items: CartItemsType[]) => {
+    items.reduce((prev: number, item) => prev + item.quantity * item.price, 0);
+  };
+
   return (
     <>
       {cartItems.length === 0 ? (
@@ -44,6 +54,7 @@ const Cart = () => {
                   >
                     +
                   </button>
+                  <p>{total}</p>
                 </div>
               </div>
             </div>

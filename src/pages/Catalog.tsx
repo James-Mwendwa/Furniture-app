@@ -52,7 +52,7 @@ const Catalog = () => {
   return (
     <div className="bg-bg">
       <div className="p-5 mx-10">
-        <div className="flex items-center justify-between  bg-white rounded-lg">
+        <div className="flex flex-wrap items-center justify-between  bg-white rounded-lg">
           <h2 className="text-xl ml-4">Dinning</h2>
           <BsFillArrowRightCircleFill className="text-2xl cursor-pointer mr-2" />
         </div>
@@ -80,7 +80,7 @@ const Catalog = () => {
       </div>
 
       <div className="p-5 mx-10">
-        <div className="flex items-center justify-between  bg-white rounded-lg">
+        <div className="flex flex-wrap items-center justify-between  bg-white rounded-lg">
           <h2 className="text-xl ml-4">Office</h2>
           <BsFillArrowRightCircleFill className="text-2xl cursor-pointer mr-4" />
         </div>
@@ -108,7 +108,7 @@ const Catalog = () => {
       </div>
 
       <div className="p-5 mx-10">
-        <div className="flex items-center justify-between  bg-white rounded-lg">
+        <div className="flex flex-wrap items-center justify-between  bg-white rounded-lg">
           <h2 className="text-xl ml-4">Sofa</h2>
           <BsFillArrowRightCircleFill className="text-2xl cursor-pointer mr-4" />
         </div>

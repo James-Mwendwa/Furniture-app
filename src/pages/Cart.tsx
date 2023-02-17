@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";
 import { CheckoutCard } from "../components/CheckoutCard";
-
+import { CartItem } from "../context/ShoppingCartContext";
 const Cart = () => {
   const {
     increaseCartQuantity,
@@ -11,15 +11,11 @@ const Cart = () => {
     cartItems,
   } = useContext(ShoppingCartContext);
 
-  type CartItemsType = {
-    items: cartItems[];
-  };
+  //const quantity =  getItemQuantity(id)
 
-  const quantity = getItemQuantity(id);
-
-  const total = (items: CartItemsType[]) => {
-    items.reduce((prev: number, item) => prev + item.quantity * item.price, 0);
-  };
+  //const total = (items: CartItem[]) => {
+  // items.reduce((prev: number, item) => prev + item.quantity * item.price, 0);
+  // };
 
   return (
     <>
@@ -54,7 +50,6 @@ const Cart = () => {
                   >
                     +
                   </button>
-                  <p>{total}</p>
                 </div>
               </div>
             </div>
